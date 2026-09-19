@@ -28,3 +28,9 @@ def update_pacman():
     if not _check_pacman_installed():
         raise RuntimeError("Pacman is not installed on this system.")
     runner.run(["sudo", "pacman", "-Syu"])
+
+def pacman_clean_cache():
+    """Clean the Pacman package cache."""
+    if not _check_pacman_installed():
+        raise RuntimeError("Pacman is not installed on this system.")
+    runner.run(["sudo", "pacman", "-Sc"])

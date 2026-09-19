@@ -29,6 +29,10 @@ class ArchDistro(GenericDistro):
 
         cli_print_utility.print_output(pacman.update_pacman)
 
+        cli_print_utility.print_header("Cleaning Pacman Cache")
+
+        cli_print_utility.print_output(pacman.pacman_clean_cache)
+
         cli_print_utility.print_header("Update AUR Packages")
 
         if(paru.avail()):
